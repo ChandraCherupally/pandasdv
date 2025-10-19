@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=65.5.0", "wheel", "setuptools_scm[toml]>=7.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pandasdv"
+version = "1.0.0"
+description = "A simple survey data validation package using pandas."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+  {name = "NaveenChandra Cherupally", email = "cherupallynaveen@gmail.com"}
+]
+dependencies = [
+  "pandas>=2.3.3",
+  "numpy>=2.2.6",
+  "pyreadstat==1.3.1"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/ChandraCherupally/pandas_validator"
+"Repository" = "https://github.com/ChandraCherupally/pandas_validator"
+
+[tool.setuptools.packages.find]
+where = ["pandas_validator"]
+
