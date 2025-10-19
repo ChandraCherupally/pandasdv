@@ -16,5 +16,8 @@ from pandas-validator import SR, MULTI, initial_setup
 
 
 df = initial_setup('survey_data.sav')
-SR(Rout='QFILTER', QVAR='Q1', RNG=[1,2,3,4], LIST=['CID','Q1'])
+SR(Rout='QFILTER', QVAR='Q1', RNG=[1,2,3,4], LIST=['Q1'])
+
+
+MR(Rout='QFILTER', QVAR='Q2', LIST=['Q2'])
 ```
