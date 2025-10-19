@@ -48,6 +48,9 @@ SR(Rout='QFILTER', QVAR='Q1', RNG=[1, 2, 3, 4], LIST=['Q1'])
 
 # Validate a multi-response question
 MULTI(Rout='QFILTER', QVAR=['Q2_1', 'Q2_2', 'Q2_3'], QEX=['Q2_99'])
+
+# Output results
+output_setup('validation_results.txt')
 ```
 
 ---

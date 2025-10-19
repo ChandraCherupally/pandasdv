@@ -12,4 +12,5 @@ dist/
 *.egg
 .DS_Store
 Thumbs.db
+Sample_projects/
 
