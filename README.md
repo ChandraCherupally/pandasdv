@@ -1,4 +1,4 @@
-# pandas-validator
+# pandas datvalidator
 
 
 A Python library to validate survey and structured datasets using pandas.
