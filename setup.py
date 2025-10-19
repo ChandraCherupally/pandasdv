@@ -5,7 +5,7 @@ with open("README.md", encoding="utf-8") as f:
 
 setup(
     name="pandasdv",                     
-    version="0.1.0",                             
+    version="0.1.1",                             
     author="NaveenChandra Cherupally",
     author_email="cherupallynaveen@gmail.com",
     description="A simple survey data validation package using pandas.",
