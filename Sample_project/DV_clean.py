@@ -1,7 +1,9 @@
 from pandasdv import *
 
-df = initial_setup(input_file="Consumer_Brand_Preference_Data_50.sav")
 
+df = initial_setup(
+    input_file="/home/chandra/Desktop/Git_Hub/pandasdv/Sample_project/Consumer_Brand_Preference_Data_50.sav"
+)
 # Print all column names
 ##print(df.columns.tolist())
 
@@ -96,5 +98,5 @@ OETEXT(QVAR='Q14_text')
 
 
 ##################################################################### Exporting output
-output_setup(out_file='Python_output.txt')
+output_setup(out_file='/home/chandra/Desktop/Git_Hub/pandasdv/Sample_project/Python_output.txt')
 

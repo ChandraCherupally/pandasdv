@@ -18,6 +18,16 @@ from .io_utils import *
 
 
 def FLT_LIST(COND=None, LIST=[]):
+    """
+    Function to filter and list cases based on a condition.
+    
+    Parameters:
+    COND : boolean Series
+        Condition to filter the DataFrame.
+    LIST : list of str
+        List of columns to display in the filtered output.
+    """
+
     from .io_utils import df
     num_cases_read = df.shape[0]
     filtered_df = df[COND]
@@ -26,10 +36,23 @@ def FLT_LIST(COND=None, LIST=[]):
         print(filtered_df[LIST].reset_index(drop=True).to_string(index=False))
     print(f"\nNumber of cases listed: {num_cases_listed} of {num_cases_read}\n")
 
+#### Example
+#### FLT_LIST(COND=df['CID'].isna() | (df['CID']<=0), LIST=['CID', 'CID'])
+
 
 def SR(Rout='QFILTER', QVAR=[], RNG=[], LIST=[]):
     """
-    Validate Single Response (SR) questions.
+    Function to process Single Response variables.
+    
+    Parameters:
+    Rout : str
+        Column name for the filter variable.
+    QVAR : str
+        Column name for the question variable.
+    RNG : list of int
+        List of valid range values for the question variable.
+    LIST : list of str
+        List of columns to display in the filtered output.
     """
     print(f"{QVAR}:")
     from .io_utils import df
@@ -44,11 +67,31 @@ def SR(Rout='QFILTER', QVAR=[], RNG=[], LIST=[]):
     FLT_LIST(condition, [df.columns[0], QVAR] + LIST)
     df.drop(columns=[Rout], inplace=True)
 
+#### Example for filter question
+#### df['QFILTER'] = 0
+#### df.loc[df['Q30'].between(2,5), 'QFILTER'] = 1
+### SR(Rout='QFILTER', QVAR='Q30a', RNG=list(range(1,17)) + [97],LIST=['CID','Q30a','Q30'])
+
+#### Example for Ask all question
+#### df['QFILTER'] = 1
+#### SR(Rout='QFILTER',QVAR='Q1', RNG=list(range(3,9)), LIST=['CID','Q1'])
+
 
 def MULTI(Rout='QFILTER', QVAR=[], QEX=[], LIST=[]):
     """
-    Validate Multi Response questions with exclusive checks.
+    Function to process Multi question variables with exclusive checks.
+    
+    Parameters:
+    Rout : str
+        Column name for the filter variable.
+    QVAR : list of str
+        List of question variable column names.
+    QEX : list of str
+        List of exclusive variable column names.
+    LIST : list of str
+        List of columns to display in the filtered output.
     """
+
     print(f"{QVAR[0]} to {QVAR[-1]}:")
     from .io_utils import df
 
@@ -85,11 +128,27 @@ def MULTI(Rout='QFILTER', QVAR=[], QEX=[], LIST=[]):
 
     df.drop(columns=['QCount1', 'QCount2', 'QCount3', Rout], errors='ignore', inplace=True)
 
+#### Example
+#### df['QFILTER'] = 0
+#### df.loc[df['Q28'].between(2,5), 'QFILTER'] = 1
+#### MULTI(Rout='QFILTER', QVAR=['Q29_1', 'Q29_2','Q29_3'], EX=['Q29_99'], NR=4)
+
 
 def GRID(Rout='QFILTER', QVAR=[], CVAR=[], COD=[], LIST=[]):
     """
-    Validate Grid questions (with or without control variables).
+    Function to process grid questions with specific codes and filter checks.
+    
+    Parameters:
+    Rout : str
+        Column name for the filter variable.
+    QVAR : list of str
+        List of question variable column names.
+    COD : list of int
+        List of valid codes for the question variables.
+    LIST : list of str
+        List of columns to display in the filtered output.
     """
+
     print(f"{QVAR[0]} to {QVAR[-1]}")
     from .io_utils import df
     NR = len(QVAR)
@@ -128,10 +187,28 @@ def GRID(Rout='QFILTER', QVAR=[], CVAR=[], COD=[], LIST=[]):
 
         df.drop(columns=['err', Rout], inplace=True)
 
+# Perform the GRID check
+## GRID(Rout='QFILTER', QVAR=['Q56_1', 'Q56_2'], COD=[1, 2, 3, 4, 5], LIST=[])
+
+# Perform the GRID_FLT check
+## GRID(QVAR=['QCN5e_1', 'QCN5e_2', 'QCN5e_3', 'QCN5e_4', 'QCN5e_5'], CVAR=['QCN5d_1', 'QCN5d_2', 'QCN5d_3', 'QCN5d_4', 'QCN5d_5'], COD=[1, 2, 3, 4, 5], LIST=[])
 
 def RANK_CHECK(Rout='QFILTER', QVAR=[], MAXR=0, MINR=None):
     """
-    Validate Rank Order questions.
+    Function to process rank order questions with specific checks:
+    1. Invalid Punches
+    2. Duplicate Ranks
+    3. Filter OFF Check
+
+    Parameters:
+    Rout : str
+        Column name for the routing/filter variable.
+    QVAR : list of str
+        List of rank order question columns.
+    MAXR : int
+        Maximum rank value.
+    LIST : list of str
+        List of columns to display in the filtered output.
     """
     from .io_utils import df
 
@@ -171,6 +248,10 @@ def RANK_CHECK(Rout='QFILTER', QVAR=[], MAXR=0, MINR=None):
     FLT_LIST(COND=condition_filter_off, LIST=[df.columns[0], Rout] + QVAR)
 
     df.drop(columns=['QCount1', 'err', 'QMAXR'], errors='ignore', inplace=True)
+
+# Example usage
+# Assuming 'Routing' is the routing variable, and the rank order questions are in columns Q180_Orderr1 to Q180_Orderr6
+# RANK_CHECK(df, Rout='QFILTER', QVAR=['Q180_Orderr1', 'Q180_Orderr2', 'Q180_Orderr3', 'Q180_Orderr4', 'Q180_Orderr5', 'Q180_Orderr6'], MAXR=3, LIST=[])
 
 
 def OETEXT(Rout='QFILTER', QVAR=[], LIST=[]):

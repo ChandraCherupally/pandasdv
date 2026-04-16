@@ -1,0 +1,162 @@
+RespID:
+
+Number of cases listed: 0 of 50
+
+RespID Duplicate id's checking:
+
+Number of cases listed: 0 of 50
+
+Q1:
+
+Number of cases listed: 0 of 50
+
+Q2 checking:
+ RespID  Q1   Q2
+   1003 1.0  NaN
+   1008 2.0 90.0
+
+Number of cases listed: 2 of 50
+
+Q3:
+
+Number of cases listed: 0 of 50
+
+Q4:
+
+Number of cases listed: 0 of 50
+
+Q5_1 to Q5_6:
+Q5_1 - Nothing Selected:
+
+Number of cases listed: 0 of 50
+
+Q5_1 - Invalid Punches:
+
+Number of cases listed: 0 of 50
+
+Q5_1 - Exclusive Check:
+
+Number of cases listed: 0 of 50
+
+Q6_1 to Q6_6:
+Q6_1 - Nothing Selected:
+
+Number of cases listed: 0 of 50
+
+Q6_1 - Invalid Punches:
+
+Number of cases listed: 0 of 50
+
+Q6_1 - Exclusive Check:
+
+Number of cases listed: 0 of 50
+
+Q6_1 - Filter OFF Check:
+
+Number of cases listed: 0 of 50
+
+Q7_1:
+
+Number of cases listed: 0 of 50
+
+Q7_2:
+
+Number of cases listed: 0 of 50
+
+Q7_3:
+
+Number of cases listed: 0 of 50
+
+Q7_4:
+
+Number of cases listed: 0 of 50
+
+Q7_5:
+ RespID  Q7_5  Q6_5
+   1031   NaN   1.0
+   1034   NaN   1.0
+
+Number of cases listed: 2 of 50
+
+Q7_6:
+ RespID  Q7_6  Q6_6
+   1004   NaN   1.0
+   1039   NaN   1.0
+
+Number of cases listed: 2 of 50
+
+Q8_1 to Q8_98:
+Q8_1 - Nothing Selected:
+
+Number of cases listed: 0 of 50
+
+Q8_1 - Invalid Punches:
+
+Number of cases listed: 0 of 50
+
+Q8_1 - Exclusive Check:
+ RespID  QFILTER  Q8_1  Q8_2  Q8_3  Q8_4  Q8_5  Q8_6  Q8_7  Q8_8  Q8_9  Q8_98  Q8_97
+   1003        1   1.0   0.0   0.0   1.0   0.0   0.0   0.0   0.0   0.0    0.0    1.0
+   1029        1   1.0   1.0   0.0   0.0   0.0   1.0   1.0   0.0   0.0    0.0    1.0
+
+Number of cases listed: 2 of 50
+
+Q8_oth:
+ RespID Q8_oth  Q8_97
+   1005 fdffgg    0.0
+   1029           1.0
+
+Number of cases listed: 2 of 50
+
+Q9_1 to Q9_5
+Q9_1 - Invalid Punches:
+
+Number of cases listed: 0 of 50
+
+Q9_1 - Filter OFF Check:
+
+Number of cases listed: 0 of 50
+
+Q10:
+ RespID  Q10   Q4
+   1048  5.0 97.0
+
+Number of cases listed: 1 of 50
+
+Q11_1 to Q11_7:
+Q11_1 - Nothing Selected:
+
+Number of cases listed: 0 of 50
+
+Q11_1 - Invalid Punches:
+
+Number of cases listed: 0 of 50
+
+Q11_1 - Exclusive Check:
+ RespID  QFILTER  Q11_1  Q11_2  Q11_3  Q11_4  Q11_5  Q11_6  Q11_7  Q11_97
+   1046        1    0.0    1.0    0.0    1.0    1.0    1.0    1.0     1.0
+
+Number of cases listed: 1 of 50
+
+Q12:
+
+Number of cases listed: 0 of 50
+
+Q13_1 to Q13_8:
+Q13_1 - Nothing Selected:
+
+Number of cases listed: 0 of 50
+
+Q13_1 - Invalid Punches:
+
+Number of cases listed: 0 of 50
+
+Q13_oth:
+
+Number of cases listed: 0 of 50
+
+Q14_text:
+
+Number of cases listed: 0 of 50
+
+Total number of records: 50
